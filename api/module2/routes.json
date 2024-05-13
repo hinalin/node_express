@@ -1,0 +1,52 @@
+[
+  {
+    "path": "/",
+    "method": "get",
+    "action": "auth.home",
+    "public": true,
+    "globalMiddlewares": [],
+    "middlewares": [],
+    "pathFromRoot": false,
+    "enabled": true
+  },
+  {
+    "path": "/signup",
+    "method": "get",
+    "action": "auth.signup",
+    "public": true,
+    "globalMiddlewares": [],
+    "middlewares": [],
+    "pathFromRoot": false,
+    "enabled": true
+  },
+  {
+    "path": "/login",
+    "method": "post",
+    "action": "auth.login",
+    "public": true,
+    "globalMiddlewares": [],
+    "middlewares": [],
+    "pathFromRoot": false,
+    "enabled": true
+  },
+  {
+    "path": "update",
+    "method": "put",
+    "action": "auth.update",
+    "public": false,
+    "globalMiddlewares": [],
+    "middlewares": [],
+    "pathFromRoot": false,
+    "enabled": false
+  },
+  {
+    "path": "/remove",
+    "method": "delete",
+    "action": "auth.remove",
+    "public": true,
+    "globalMiddlewares": [],
+    "middlewares": [],
+    "pathFromRoot": false,
+    "enabled": true
+  }
+]
