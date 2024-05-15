@@ -1,4 +1,4 @@
-// #!usr/bin/env node
+// #!/usr/bin/env node
 
-// const server = require('../server');
-// server();
+const { initializeApp } = require("../server");
+initializeApp();

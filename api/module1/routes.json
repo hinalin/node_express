@@ -23,7 +23,7 @@
     "path": "/login",
     "method": "post",
     "action": "auth.login",
-    "public": true,
+    "public": false,
     "globalMiddlewares": ["globalMiddleware.globalMiddleware1" , "globalMiddleware.globalMiddleware4"],
     "middlewares": ["middleWare1.moduleMiddleware3"],
     "pathFromRoot": false,
