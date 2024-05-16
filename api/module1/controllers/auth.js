@@ -1,6 +1,6 @@
 require("dotenv").config();
 const jwt = require("jsonwebtoken");
-const verifyToken = require("../../middleware/globalMiddleware");
+const verifyToken = require("../../../middleware/globalMiddleware");
 const secret_key = process.env.SECRET_KEY;
 
 const home = (req, res) => {

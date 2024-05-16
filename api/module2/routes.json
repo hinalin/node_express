@@ -1,0 +1,12 @@
+[
+  {
+    "path": "/demo",
+    "method": "POST",
+    "action": "Your route path",
+    "public": true,
+    "globalMiddlewares": [],
+    "middlewares": [],
+    "pathFromRoot": false,
+    "enabled": true
+  }
+]
