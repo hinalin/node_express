@@ -1,0 +1,22 @@
+[
+  {
+    "path": "/demo",
+    "method": "post",
+    "action": "controllers.functionName",
+    "public": true,
+    "globalMiddlewares": [],
+    "middlewares": [],
+    "pathFromRoot": false,
+    "enabled": true
+  },
+  {
+    "path": "/test",
+    "method": "get",
+    "action": "controllers.test",
+    "public": true,
+    "globalMiddlewares": [],
+    "middlewares": [],
+    "pathFromRoot": false,
+    "enabled": true
+  }
+]
