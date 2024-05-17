@@ -1,6 +1,5 @@
+const functionName = (() => {
+                          console.log("this is Function");
+                      })
 
-            const moduleService = (() => {
-                console.log("Module Service");
-            })
-            module.exports = { moduleService };
-        
+                      module.exports = { functionName };

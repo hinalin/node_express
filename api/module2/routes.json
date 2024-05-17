@@ -1,8 +1,18 @@
 [
   {
     "path": "/demo",
-    "method": "POST",
-    "action": "Your route path",
+    "method": "post",
+    "action": "controllers.functionName",
+    "public": true,
+    "globalMiddlewares": [],
+    "middlewares": [],
+    "pathFromRoot": false,
+    "enabled": true
+  },
+  {
+    "path": "/test",
+    "method": "get",
+    "action": "controllers.test",
     "public": true,
     "globalMiddlewares": [],
     "middlewares": [],

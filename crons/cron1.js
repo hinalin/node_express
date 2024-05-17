@@ -12,4 +12,3 @@ cron.schedule(" * 5 * * *", () => {
 //   console.log("Cron3 is running in every 10 seconds");
 // });
 
-module.exports = { cron };

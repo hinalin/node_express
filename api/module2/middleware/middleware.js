@@ -1,7 +1,5 @@
+const functionName = (() => {
+                          console.log("this is Function");
+                      })
 
-            const moduleMiddleware = ( req , res , next ) => {
-                console.log("Success moduleMiddleware");
-                next();
-            }
-            module.exports = { moduleMiddleware };
-        
+                      module.exports = { functionName };

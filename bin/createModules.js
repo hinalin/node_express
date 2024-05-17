@@ -2,29 +2,16 @@ const fs = require("fs");
 const path = require("path");
 
 function createModule(moduleName) {
+  const fileContent = `const functionName = (() => {
+                          console.log("this is Function");
+                      })
+
+                      module.exports = { functionName };`;
+
   const moduleStructure = {
-    services: `
-            const moduleService = (() => {
-                console.log("Module Service");
-            })
-            module.exports = { moduleService };
-        `,
-    middleware: `
-            const moduleMiddleware = ( req , res , next ) => {
-                console.log("Success moduleMiddleware");
-                next();
-            }
-            module.exports = { moduleMiddleware };
-        `,
-    controllers: `
-            const home = (req, res) => {
-                console.log("My homepage");
-                res.send("This is my Home page!!");
-            };
-
-            module.exports = { home };
-
-        `,
+    services: fileContent,
+    middleware: fileContent,
+    controllers: fileContent,
   };
 
   const routesStructure = {
@@ -32,8 +19,8 @@ function createModule(moduleName) {
       [
         {
           path: "/demo",
-          method: "POST",
-          action: "Your route path",
+          method: "post",
+          action: "controllers.functionName",
           public: true,
           globalMiddlewares: [],
           middlewares: [],
@@ -46,25 +33,25 @@ function createModule(moduleName) {
     ),
   };
 
-  const apiFolderPath = path.join(__dirname, "../api", moduleName);
-  // console.log(apiFolderPath, "pathhhhhhhhh");
+  const moduleFolderPath = path.join(__dirname, "../api", moduleName);
+  console.log(moduleFolderPath, "pathhhhhhhhh");
 
   try {
-    fs.mkdirSync(apiFolderPath);
+    fs.mkdirSync(moduleFolderPath);
 
     for (const [file, content] of Object.entries(routesStructure)) {
-      fs.writeFileSync(path.join(apiFolderPath, file), content);
+      fs.writeFileSync(path.join(moduleFolderPath, file), content);
     }
 
     for (const [folder, content] of Object.entries(moduleStructure)) {
-      const folderPath = path.join(apiFolderPath, folder);
+      const folderPath = path.join(moduleFolderPath, folder);
       fs.mkdirSync(folderPath);
 
       fs.writeFileSync(path.join(folderPath, `${folder}.js`), content);
     }
 
     console.log(`Module '${moduleName}' created successfully.`);
-    console.log(`Folder structure created at ${apiFolderPath}`);
+    console.log(`Folder structure created at ${moduleFolderPath}`);
   } catch (err) {
     console.error("Error:", err);
   }
